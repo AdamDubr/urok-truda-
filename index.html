@@ -316,11 +316,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <label>Класс<select id="f-grade" name="grade"><option value="">Выберите</option><option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option></select></label>
       <label class="full">Вопрос или комментарий<textarea id="f-note" name="note" placeholder="Что интересно ребёнку, удобное время для звонка"></textarea></label>
       <div class="actions">
-        <button class="btn" type="submit" data-via="wa">Отправить в WhatsApp</button>
-        <button class="btn ghost" type="submit" data-via="tg">Написать в Telegram</button>
+        <button class="btn" type="submit" data-via="wa">Отправить заявку в WhatsApp</button>
       </div>
       <p class="msg" id="f-msg" role="status" aria-live="polite"></p>
-      <p class="note">Заявка откроется в WhatsApp или Telegram школы уже заполненной, останется нажать «Отправить». Или позвоните: <b>+90 242 349 42 42</b>.</p>
+      <p class="note">Заявка откроется в WhatsApp уже заполненной, останется нажать «Отправить». Или напишите напрямую: <b>+90 535 676 49 27</b>.</p>
     </form>
   </section>
 </main>
@@ -365,17 +364,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 (function(){
   const f=document.getElementById('lead'); if(!f) return;
-  const WA='905309049097', TG='moskovaokulu';
+  const WA='905356764927';
   const v=id=>document.getElementById(id).value.trim();
   f.addEventListener('submit',function(e){
     e.preventDefault();
     const via=(e.submitter&&e.submitter.dataset.via)||'wa', msg=document.getElementById('f-msg');
     if(!v('f-parent')||!v('f-phone')){msg.textContent='Укажите, пожалуйста, имя и телефон, чтобы школа могла с вами связаться.';(v('f-parent')?document.getElementById('f-phone'):document.getElementById('f-parent')).focus();return;}
     const text=['Здравствуйте! Заявка на курс «Урок труда».','Родитель: '+v('f-parent'),'Телефон: '+v('f-phone'),v('f-child')?'Ребёнок: '+v('f-child'):'',v('f-grade')?'Класс: '+v('f-grade'):'',v('f-note')?'Комментарий: '+v('f-note'):''].filter(Boolean).join('\n');
-    const url= via==='tg' ? 'https://t.me/'+TG : 'https://wa.me/'+WA+'?text='+encodeURIComponent(text);
-    if(via==='tg'){try{navigator.clipboard&&navigator.clipboard.writeText(text)}catch(_){}}
+    const url='https://wa.me/'+WA+'?text='+encodeURIComponent(text);
     const w=window.open(url,'_blank','noopener');
-    msg.textContent= via==='tg' ? 'Текст заявки скопирован. Вставьте его в чат школы в Telegram.' : 'Открываем WhatsApp школы с готовой заявкой. Нажмите «Отправить».';
+    msg.textContent='Открываем WhatsApp с готовой заявкой. Нажмите «Отправить».';
     if(!w) location.href=url;
   });
 })();
