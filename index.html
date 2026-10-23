@@ -219,6 +219,18 @@ h1,h2,h3{overflow-wrap:break-word;hyphens:auto}
   .node h2,.apply h2,.end h2{font-size:clamp(1.4rem,6.4vw,1.9rem);letter-spacing:-.01em}
   .brand b{font-size:.72rem}
 }
+
+/* МОБИЛЬНАЯ ВЕРСИЯ: симметричные поля, блоки по центру */
+@media (max-width:640px){
+  :root{--pl:0px;--wx:9px}
+  .wrap{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+  .sym{display:none}
+  .wire{opacity:.7}
+  .node,.apply{padding-left:0}
+  .grow,.pair,.mods,.final,.form,.date,.qs{margin-left:auto;margin-right:auto}
+  .date{justify-content:space-between}
+  .lamp{display:block;margin-left:auto;margin-right:auto}
+}
 :focus-visible{outline:2px solid var(--glow);outline-offset:3px}
 @media (prefers-reduced-motion:no-preference){
   .wire b{transition:height .15s linear}
