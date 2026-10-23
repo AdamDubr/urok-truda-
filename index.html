@@ -231,6 +231,25 @@ h1,h2,h3{overflow-wrap:break-word;hyphens:auto}
   .date{justify-content:space-between}
   .lamp{display:block;margin-left:auto;margin-right:auto}
 }
+
+/* ЕДИНАЯ СЕТКА ОТСТУПОВ */
+:root{--sec:clamp(56px,8vw,96px);--blk:clamp(24px,3.2vw,32px);--sub:clamp(12px,1.6vw,16px);--txt:14px}
+.hero .wrap{padding-bottom:var(--sec)}
+.node,.apply{padding-block:0 var(--sec)}
+.node:first-of-type{padding-top:0}
+.sym{top:0}
+.node>.ref+h2,.apply>.ref+h2,.end>.ref+.lamp{margin-top:var(--txt)!important}
+.node h2+.lead,.apply h2+.lead,.end h2+.lead,.end .lamp+h2{margin-top:var(--txt)!important}
+.qs,.grow,.mods,.final,.form,.date,.fuse{margin-top:var(--blk)!important}
+.pair{margin-top:var(--sub)!important}
+.grow,.pair,.mods,.final,.form .actions{gap:var(--sub)}
+.school{padding-block:var(--blk)}
+footer{padding-block:var(--blk)}
+@media (max-width:640px){
+  :root{--sec:56px;--blk:24px;--sub:12px;--txt:12px}
+  .hero .wrap{padding-bottom:var(--sec)}
+  .node,.apply{padding-block:0 var(--sec)}
+}
 :focus-visible{outline:2px solid var(--glow);outline-offset:3px}
 @media (prefers-reduced-motion:no-preference){
   .wire b{transition:height .15s linear}
