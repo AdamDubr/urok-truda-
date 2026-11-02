@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Урок труда — новый курс для подростков в Частной Московской Международной школе, Анталья.">
+<meta name="description" content="Урок труда — практический курс для подростков 5–11 классов в Частной Московской Международной школе, Анталья. Дни открытых дверей 21–22 и 28–29 ноября, старт 1 декабря 2026.">
 <style>body{margin:0}[hidden]{display:none!important}</style>
 <title>Урок труда</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -260,35 +260,154 @@ footer{padding-block:var(--blk)}
   .end.on .lamp .halo{animation:hum 2.4s ease-in-out infinite}
   @keyframes hum{50%{opacity:.5}}
 }
+
+/* ===== v3: дни открытых дверей, схемы при наведении, мастерская, форма ===== */
+.hero .cta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+.hero .cta .btn{padding:15px 20px;font-size:.98rem}
+.hero .cta .btn.ghost{background:rgba(15,17,20,.55);backdrop-filter:blur(4px)}
+.hero .dod{margin-top:18px;display:inline-flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:10px 14px;border-left:3px solid var(--glow);background:rgba(15,17,20,.62);backdrop-filter:blur(4px)}
+.hero .dod b{font:700 clamp(1rem,2.4vw,1.2rem)/1.2 var(--f-display);color:var(--glow)}
+.hero .dod span{font:500 .74rem/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:#e6e1d8}
+
+.days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sub);margin-top:var(--blk)}
+.day{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--glow);padding:18px 16px 16px;display:grid;gap:6px;align-content:start;min-width:0;color:var(--ink);text-decoration:none;cursor:pointer;font:inherit;text-align:left;transition:transform .15s,border-color .15s,box-shadow .15s}
+.day:hover,.day:focus-visible{transform:translateY(-3px);border-color:var(--glow);box-shadow:0 10px 26px -14px var(--glow)}
+.day small{font:500 .72rem/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.day b{font:900 clamp(2rem,5vw,2.8rem)/1 var(--f-display);color:var(--glow)}
+.day span{font:600 .98rem/1.2 var(--f-body)}
+.day i{font-style:normal;margin-top:8px;font:700 .82rem/1 var(--f-body);color:var(--glow)}
+@media (max-width:760px){.days{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.dod-what{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sub);margin-top:var(--sub)}
+.dod-what div{padding:16px 18px;border:1px solid var(--line);display:grid;gap:6px;align-content:start;min-width:0}
+.dod-what b{font:700 1rem/1.25 var(--f-body);color:var(--ink)}
+.dod-what p{color:var(--ink-soft);font-size:.95rem}
+@media (max-width:760px){.dod-what{grid-template-columns:minmax(0,1fr)}}
+.small-note{margin-top:var(--sub);font:400 .88rem/1.5 var(--f-body);color:var(--ink-soft);max-width:62ch}
+
+/* модули: фото ↔ схема */
+.mod .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:#001529;cursor:pointer;outline:none}
+.mod .ph img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;transition:opacity .4s ease,transform .6s ease}
+.mod .ph .a{object-fit:cover}
+.mod .ph .b{object-fit:contain;opacity:0;transform:scale(1.04);padding:6px}
+.mod .ph .tag{position:absolute;right:10px;bottom:10px;z-index:2;font:500 .68rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:7px 9px;background:rgba(15,17,20,.82);color:var(--c);border:1px solid var(--c);pointer-events:none}
+.mod .ph .tag .t2{display:none}
+.mod:hover .ph .a,.mod .ph:focus-visible .a,.mod.on .ph .a{opacity:0;transform:scale(1.04)}
+.mod:hover .ph .b,.mod .ph:focus-visible .b,.mod.on .ph .b{opacity:1;transform:none}
+.mod:hover .ph .tag .t1,.mod.on .ph .tag .t1,.mod .ph:focus-visible .tag .t1{display:none}
+.mod:hover .ph .tag .t2,.mod.on .ph .tag .t2,.mod .ph:focus-visible .tag .t2{display:inline}
+.mod .ph:focus-visible{box-shadow:inset 0 0 0 2px var(--glow)}
+.hint{margin-top:var(--sub);font:500 .74rem/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--copper)}
+
+/* мастерская */
+.ws{display:grid;gap:var(--sub);margin-top:var(--blk)}
+.ws .shot img{aspect-ratio:16/9}
+.plan{margin:0;background:#001529;border:1px solid var(--line)}
+.plan img{width:100%;height:auto}
+.plan figcaption{padding:12px 14px;font:500 .74rem/1.5 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);border-top:1px solid var(--line)}
+.zones{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;background:var(--line);border:1px solid var(--line)}
+.zones div{background:var(--panel);padding:14px 14px 16px;display:grid;gap:4px;align-content:start;min-width:0}
+.zones b{font:700 1.05rem/1.1 var(--f-display);color:var(--volt)}
+.zones span{color:var(--ink-soft);font-size:.92rem;line-height:1.45}
+@media (max-width:900px){.zones{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.safe{list-style:none;margin:var(--sub) 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.safe li{display:flex;gap:12px;align-items:baseline;padding:12px 14px;background:var(--panel);border-left:3px solid var(--safe);min-width:0}
+.safe li b{font:500 .72rem/1.4 var(--f-mono);color:var(--safe);letter-spacing:.08em;text-transform:uppercase;flex:none;width:5.6rem}
+@media (max-width:700px){.safe{grid-template-columns:minmax(0,1fr)}}
+
+/* формат и таймлайн */
+.fmt{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:var(--blk);border:1px solid var(--line)}
+.fmt div{padding:18px;border-right:1px solid var(--line);min-width:0;display:grid;gap:4px}
+.fmt div:last-child{border-right:0}
+.fmt b{font:700 clamp(1.2rem,3vw,1.6rem)/1.05 var(--f-display);color:var(--volt)}
+.fmt span{color:var(--ink-soft);font-size:.93rem}
+@media (max-width:760px){.fmt{grid-template-columns:repeat(2,minmax(0,1fr))}.fmt div:nth-child(2){border-right:0}.fmt div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.tl{list-style:none;margin:var(--blk) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;position:relative}
+.tl::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:linear-gradient(90deg,var(--copper),var(--glow))}
+.tl li{position:relative;padding:30px 12px 0 0;display:grid;gap:4px;min-width:0}
+.tl li::before{content:"";position:absolute;left:0;top:0;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--glow)}
+.tl li.hot::before{background:var(--glow);box-shadow:0 0 14px var(--glow)}
+.tl b{font:700 1rem/1.2 var(--f-display);color:var(--glow)}
+.tl span{color:var(--ink-soft);font-size:.93rem}
+@media (max-width:700px){.tl{grid-template-columns:minmax(0,1fr);gap:18px}.tl::before{left:7px;right:auto;top:0;bottom:0;width:2px;height:auto;background:linear-gradient(180deg,var(--copper),var(--glow))}.tl li{padding:0 0 0 30px}}
+
+/* форма v3 */
+.form fieldset{grid-column:1/-1;border:0;margin:0;padding:0;min-width:0}
+.form legend{font:500 .74rem/1.2 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:block;position:relative;cursor:pointer;text-transform:none;letter-spacing:0}
+.chips input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;pointer-events:none}
+.chips span{display:block;padding:11px 14px;border:1px solid var(--line);background:var(--bg);font:600 .95rem/1.1 var(--f-body);color:var(--ink);transition:border-color .15s,background .15s}
+.chips input:checked+span{border-color:var(--glow);background:rgba(255,183,104,.14);color:var(--glow)}
+.chips input:focus-visible+span{outline:2px solid var(--glow);outline-offset:2px}
+.form .agree{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;text-transform:none;letter-spacing:0;font:400 .88rem/1.45 var(--f-body);color:var(--ink-soft)}
+.form .agree input{width:20px;height:20px;flex:none;margin:1px 0 0;accent-color:var(--glow)}
+.form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form .btn[disabled]{opacity:.6;cursor:progress}
+.form .msg.ok{color:var(--safe)}
+.form .msg.err{color:#ff8f7e}
+.done{grid-column:1/-1;display:grid;gap:12px;padding:6px 0}
+.done h3{font-size:clamp(1.3rem,3vw,1.7rem);color:var(--safe)}
+.done p{color:var(--ink-soft)}
+.seats{margin-top:var(--sub);display:inline-flex;gap:10px;align-items:center;font:500 .78rem/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--glow)}
+.seats i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--glow);box-shadow:0 0 10px var(--glow)}
+@media (max-width:640px){
+  .days,.dod-what,.ws,.zones,.safe,.fmt,.tl{margin-left:auto;margin-right:auto}
+  .hero .cta .btn{flex:1 1 100%}
+  .hero .dod{display:flex}
+}
+@media (prefers-reduced-motion:reduce){.mod .ph img,.day{transition:none}}
+
+.hero .ref{text-shadow:0 1px 10px rgba(0,0,0,.85)}
+
 </style>
 </head>
 <body>
 
 <div class="topbar"><div class="wrap">
   <a class="brand" href="#top"><span class="mono">ЧММШ</span><span><b>Частная Московская Международная школа</b><small>Анталья · с 2011 года</small></span></a>
-  <a class="btn" href="#apply">Заявка</a>
+  <a class="btn" href="#apply">Записаться</a>
 </div></div>
 
 <header class="hero" id="top">
-  <img src="img/10_format_zanyatiy.jpg" alt="Подростки разбирают тостер и фен, преподаватель объясняет схему у доски" width="1672" height="941">
+  <img src="img/10_format_zanyatiy.jpg" alt="Подростки разбирают бытовую технику, преподаватель объясняет схему у доски" width="1672" height="941">
   <div class="wrap">
-    <div class="ref">Новый курс «Урок труда» <i>· Московская международная школа · Анталья</i></div>
+    <div class="ref">Новый курс «Урок труда» <i>· 5–11 классы · Анталья</i></div>
     <h1 style="margin-top:16px">Разобраться.<br>Придумать.<br><em>Сделать.</em></h1>
-    <p class="lead">Курс, после которого ребёнок понимает, как устроен мир вокруг, и не боится в нём ничего починить. Голова и руки работают в паре 🧠🤲</p>
-    <div class="tag"><span>💬 открытый диалог</span><span>🛠 практика каждое занятие</span><span>📅 старт в декабре 2026</span></div>
+    <p class="lead">Подросток разберётся, как устроены розетка, кран, велосипед и мотор, и к лету выведет на воду катер, который группа построит своими руками.</p>
+    <div class="dod"><b>Дни открытых дверей: 21–22 и 28–29 ноября</b><span>вход по записи</span></div>
+    <div class="cta"><a class="btn" href="#apply">Записаться на день открытых дверей</a><a class="btn ghost" href="#program">Смотреть программу</a></div>
   </div>
 </header>
 
 <main class="wrap board">
   <div class="wire" aria-hidden="true"><b></b></div>
 
+  <section class="node" id="open">
+    <div class="sym" aria-hidden="true"><svg viewBox="0 0 44 44"><rect x="8" y="10" width="28" height="26"/><path d="M8 18h28M15 6v8M29 6v8"/></svg></div>
+    <div class="ref">Дни открытых дверей <i>· ноябрь 2026</i></div>
+    <h2 style="max-width:22ch">Приходите в мастерскую до старта курса</h2>
+    <p class="lead">Покажем мастерскую и программу, ребёнок попробует собрать схему своими руками, а вы получите ответы про расписание и стоимость. <strong>Вход по записи: группы на каждый день небольшие.</strong></p>
+    <div class="days">
+      <a class="day" href="#apply" data-day="Сб, 21 ноября"><small>суббота</small><b>21</b><span>ноября</span><i>Записаться →</i></a>
+      <a class="day" href="#apply" data-day="Вс, 22 ноября"><small>воскресенье</small><b>22</b><span>ноября</span><i>Записаться →</i></a>
+      <a class="day" href="#apply" data-day="Сб, 28 ноября"><small>суббота</small><b>28</b><span>ноября</span><i>Записаться →</i></a>
+      <a class="day" href="#apply" data-day="Вс, 29 ноября"><small>воскресенье</small><b>29</b><span>ноября</span><i>Записаться →</i></a>
+    </div>
+    <div class="dod-what">
+      <div><b>🛠 Попробовать руками</b><p>Ребёнок попробует собрать простую электрическую цепь на стенде и увидит, как работает выключатель.</p></div>
+      <div><b>🗺 Увидеть мастерскую</b><p>Верстаки, стенды, 3D-принтер, место, где будет строиться катер.</p></div>
+      <div><b>💬 Задать вопросы</b><p>Программа, расписание, стоимость, безопасность. Ответим на всё лично.</p></div>
+    </div>
+    <p class="small-note">Точное время и адрес пришлём в WhatsApp после записи.</p>
+  </section>
+
   <section class="node">
     <div class="sym" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M6 22h12M26 22h12M18 10v24M26 16v12"/></svg></div>
     <div class="ref">GB1 <i>· источник энергии</i></div>
-    <h2>Всё начинается с вопроса «а как это работает?»</h2>
-    <p class="lead">Каждый ребёнок рождается инженером. Обычно этот вопрос гасят словами «не трогай, сломаешь». Мы делаем наоборот: <strong>даём ему ток.</strong> Можно трогать, разбирать, проверять и понимать.</p>
+    <h2>Соцсети закрыли. Время освободилось. Займём его делом</h2>
+    <p class="lead">С 1 ноября 2026 года в Турции детям до 15 лет закрыт доступ к соцсетям. У подростка появились свободные вечера. Мы предлагаем вложить их в навыки, которые останутся на всю жизнь. <strong>Каждое занятие заканчивается результатом, который можно потрогать.</strong></p>
     <div class="qs">
-      <span>Почему лампа гаснет? 💡</span><span>Куда уходит вода из раковины? 🚰</span><span>Как велосипед переключает скорость? 🚲</span><span>Что внутри фена? 💨</span><span>Зачем в машине масло? 🚗</span><span>Можно ли напечатать деталь? 🖨</span>
+      <span>Почему лампа гаснет? 💡</span><span>Куда уходит вода из раковины? 🚰</span><span>Как велосипед переключает скорость? 🚲</span><span>Что внутри мотора? ⚙️</span><span>Зачем в машине масло? 🚗</span><span>Можно ли напечатать катер? 🖨</span>
     </div>
   </section>
 
@@ -296,12 +415,12 @@ footer{padding-block:var(--blk)}
     <div class="sym" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M4 30h10M30 30h10M14 30l16-12"/><circle cx="14" cy="30" r="2"/><circle cx="30" cy="30" r="2"/></svg></div>
     <div class="ref">SA1 <i>· включаем голову</i></div>
     <h2>Мы растим не мастера. Мы растим думающего человека</h2>
-    <p class="lead">Ремонт здесь только повод. Настоящий результат курса в том, каким становится ребёнок.</p>
+    <p class="lead">Ремонт здесь только повод. Главный результат курса в том, каким ребёнок выходит из мастерской.</p>
     <div class="grow">
       <div><span class="e">🧠</span><h3>Понимает принцип</h3><p>Видит за вещью схему и знает, почему она работает.</p></div>
       <div><span class="e">🔍</span><h3>Ищет решение</h3><p>Не ждёт готового ответа. Пробует, проверяет, находит свой способ.</p></div>
-      <div><span class="e">🛡️</span><h3>Не даст себя обмануть</h3><p>Понимает, что говорит мастер и за что просят деньги.</p></div>
-      <div><span class="e">📚</span><h3>Эрудирован</h3><p>Физика и математика оживают в реальных вещах вокруг.</p></div>
+      <div><span class="e">🛡️</span><h3>Не даст себя обмануть</h3><p>Понимает, что делает мастер и за что просит деньги.</p></div>
+      <div><span class="e">🤖</span><h3>Работает с ИИ осознанно</h3><p>Ставит задачу нейросети и проверяет ответ расчётом и прибором.</p></div>
       <div><span class="e">🤲</span><h3>Голова и руки в паре</h3><p>Сначала думает и рисует, потом делает.</p></div>
       <div><span class="e">🚀</span><h3>Уверен в себе</h3><p>«Я разобрался сам». Этот опыт остаётся на всю жизнь.</p></div>
     </div>
@@ -311,30 +430,76 @@ footer{padding-block:var(--blk)}
     </div>
   </section>
 
-      <section class="node">
+  <section class="node" id="program">
     <div class="sym" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M22 2v8M22 34v8M10 10h24M10 34h24M10 10v24M34 10v24M22 10v24"/></svg></div>
-    <div class="ref">X1–X6 <i>· параллельные ветки</i></div>
-    <h2>Шесть направлений. Один дом</h2>
-    <p class="lead">Всё, с чем ребёнок сталкивается каждый день: от розетки до автомобиля.</p>
+    <div class="ref">X1–X6 <i>· шесть направлений</i></div>
+    <h2>Всё, что дома ломается, станет понятным</h2>
+    <p class="lead">Каждый модуль начинается со схемы. Сначала понять, потом собрать руками. Ток на стендах низкий, учимся без риска.</p>
+    <p class="hint">Наведите на фото или нажмите, чтобы увидеть схему модуля ↓</p>
     <div class="mods">
-      <article class="mod" style="--c:#ffb768"><img src="img/09_instrumenty.jpg" alt="Мультиметр, индикатор, тестер и фонарь на верстаке" loading="lazy" width="1448" height="1086"><div class="in"><div class="top"><span>кабинет труда</span><b>U = I·R</b></div><h3>⚡ Электрика</h3><p>Лампа, выключатель, удлинитель. Как устроены щиток и розетка. Мультиметр.</p></div></article>
-      <article class="mod" style="--c:#73c6ff"><img src="img/v2_06_modul_voda.jpg" alt="Подросток собирает сифон и подводку под раковиной" loading="lazy" width="1448" height="1086"><div class="in"><div class="top"><span>кабинет труда</span><b>Q = v·S</b></div><h3>🚰 Вода</h3><p>Смеситель, сифон, протечки. Как вода приходит в дом и уходит из него.</p></div></article>
-      <article class="mod" style="--c:#b49bff"><img src="img/11_domashnee_zadanie.jpg" alt="Карандашный план квартиры, линейка и карандаш" loading="lazy" width="1254" height="1254"><div class="in"><div class="top"><span>дома и в классе</span><b>M 1:50</b></div><h3>🏠 Свой дом на плане</h3><p>Чертим квартиру, отмечаем розетки, краны и трубы. Дом становится понятным.</p></div></article>
-      <article class="mod" style="--c:#5fd38d"><img src="img/07_modul_velo.jpg" alt="Подросток регулирует переключатель велосипеда в мастерской" loading="lazy" width="1448" height="1086"><div class="in"><div class="top"><span>мастерская</span><b>i = z₂/z₁</b></div><h3>🚲 Вело и мото</h3><p>Цепь, звёзды, тормоза. Почему передачи облегчают подъём в гору.</p></div></article>
-      <article class="mod" style="--c:#ff8a73"><img src="img/08_modul_avto.jpg" alt="Проверка уровня масла щупом под капотом автомобиля" loading="lazy" width="1448" height="1086"><div class="in"><div class="top"><span>мастерская</span><b>p = F/S</b></div><h3>🚗 Автомобиль</h3><p>Масло, жидкости, давление в шинах. Что делать, если машина встала в дороге.</p></div></article>
-      <article class="mod" style="--c:#ffd36b"><img src="img/v2_12_modul_3d.jpg" alt="Подростки у монитора с 3D-моделью, рядом 3D-принтер печатает деталь" loading="lazy" width="1672" height="941"><div class="in"><div class="top"><span>кабинет труда</span><b>M 1:10</b></div><h3>🖨 Черчение и 3D</h3><p>От эскиза к 3D-модели и детали, напечатанной своими руками.</p></div></article>
+      <article class="mod" style="--c:#ffb768"><div class="ph" tabindex="0" role="button" aria-pressed="false" aria-label="Электрика: показать схему"><img class="a" src="img/09_instrumenty.jpg" alt="Мультиметр, индикатор, тестер и фонарь на верстаке" loading="lazy" width="1448" height="1086"><img class="b" src="img/shema_elektrika.jpg" alt="Схема щитка: автомат, УЗО, розетка, выключатель и лампа" loading="lazy" width="1200" height="800"><span class="tag"><span class="t1">схема ⇄</span><span class="t2">фото ⇄</span></span></div><div class="in"><div class="top"><span>кабинет труда</span><b>U = I·R</b></div><h3>⚡ Электрика</h3><p>Лампа, выключатель, щиток и розетка. Мультиметр, пайка, схемы на стендах.</p></div></article>
+      <article class="mod" style="--c:#73c6ff"><div class="ph" tabindex="0" role="button" aria-pressed="false" aria-label="Вода: показать схему"><img class="a" src="img/v2_06_modul_voda.jpg" alt="Подросток собирает сифон и подводку под раковиной" loading="lazy" width="1448" height="1086"><img class="b" src="img/shema_voda.jpg" alt="Схема подвода воды, раковины, сифона и канализации" loading="lazy" width="1200" height="800"><span class="tag"><span class="t1">схема ⇄</span><span class="t2">фото ⇄</span></span></div><div class="in"><div class="top"><span>кабинет труда</span><b>Q = v·S</b></div><h3>🚰 Вода</h3><p>Смеситель, сифон, протечки. Как вода приходит в дом и уходит из него.</p></div></article>
+      <article class="mod" style="--c:#b49bff"><div class="ph" tabindex="0" role="button" aria-pressed="false" aria-label="Свой дом на плане: показать схему"><img class="a" src="img/11_domashnee_zadanie.jpg" alt="Карандашный план квартиры, линейка и карандаш" loading="lazy" width="1254" height="1254"><img class="b" src="img/shema_dom.jpg" alt="План квартиры в масштабе 1:50 с розетками, светильниками, выключателями, щитком и трубами" loading="lazy" width="1200" height="800"><span class="tag"><span class="t1">схема ⇄</span><span class="t2">фото ⇄</span></span></div><div class="in"><div class="top"><span>дома и в классе</span><b>M 1:50</b></div><h3>🏠 Свой дом на плане</h3><p>Чертим свою квартиру: розетки, краны, трубы, щиток. Дом становится понятным.</p></div></article>
+      <article class="mod" style="--c:#5fd38d"><div class="ph" tabindex="0" role="button" aria-pressed="false" aria-label="Вело и мото: показать схему"><img class="a" src="img/07_modul_velo.jpg" alt="Подросток регулирует переключатель велосипеда в мастерской" loading="lazy" width="1448" height="1086"><img class="b" src="img/shema_velo.jpg" alt="Передача велосипеда: ведущая и ведомая звезда, цепь, лёгкая и тяжёлая передача" loading="lazy" width="1200" height="800"><span class="tag"><span class="t1">схема ⇄</span><span class="t2">фото ⇄</span></span></div><div class="in"><div class="top"><span>мастерская</span><b>i = z₂/z₁</b></div><h3>🚲 Вело и мото</h3><p>Цепь, звёзды, тормоза. Почему передача облегчает подъём в гору.</p></div></article>
+      <article class="mod" style="--c:#ff8a73"><div class="ph" tabindex="0" role="button" aria-pressed="false" aria-label="Автомобиль: показать схему"><img class="a" src="img/08_modul_avto.jpg" alt="Проверка уровня масла щупом под капотом автомобиля" loading="lazy" width="1448" height="1086"><img class="b" src="img/shema_dvigatel.jpg" alt="Четыре такта двигателя: впуск, сжатие, рабочий ход, выпуск" loading="lazy" width="1200" height="800"><span class="tag"><span class="t1">схема ⇄</span><span class="t2">фото ⇄</span></span></div><div class="in"><div class="top"><span>мотор и автосервис</span><b>p = F/S</b></div><h3>🚗 Мотор и автомобиль</h3><p>Как мотор «дышит» и почему глохнет. Масло, жидкости, давление в шинах.</p></div></article>
+      <article class="mod" style="--c:#ffd36b"><div class="ph" tabindex="0" role="button" aria-pressed="false" aria-label="Черчение и 3D: показать схему"><img class="a" src="img/v2_12_modul_3d.jpg" alt="Подростки у монитора с 3D-моделью, рядом 3D-принтер печатает деталь" loading="lazy" width="1672" height="941"><img class="b" src="img/shema_3d.jpg" alt="Стол 3D-принтера 800 на 800 мм и шесть секций корпуса катера, по одной печати на секцию" loading="lazy" width="1200" height="800"><span class="tag"><span class="t1">схема ⇄</span><span class="t2">фото ⇄</span></span></div><div class="in"><div class="top"><span>кабинет труда</span><b>M 1:10</b></div><h3>🖨 Черчение, 3D и ИИ</h3><p>От эскиза к 3D-модели и детали, напечатанной своими руками. Нейросеть подсказывает, ученик проверяет.</p></div></article>
+    </div>
+  </section>
+
+  <section class="node" id="workshop">
+    <div class="sym" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M6 38V14l16-9 16 9v24z"/><path d="M16 38V26h12v12"/></svg></div>
+    <div class="ref">K1 <i>· мастерская</i></div>
+    <h2>Настоящая мастерская, а не кабинет с плакатами</h2>
+    <p class="lead">Верстаки, стенды с настоящим щитком и раковиной, большой 3D-принтер и отдельная зона, где группа строит катер. <strong>Каждой работе своё место, каждому ученику своё рабочее место.</strong></p>
+    <div class="ws">
+      <figure class="shot"><img src="img/v3_masterskaya.jpg" alt="Подростки работают в мастерской: велосипед на стойке, двигатель на верстаке, 3D-модель катера на мониторе, 3D-принтер печатает корпус" loading="lazy" width="1672" height="941"><figcaption><small>так будет выглядеть занятие</small>Каждый занят своим делом</figcaption></figure>
+      <figure class="plan"><img src="img/plan_masterskoy.jpg" alt="План мастерской: вход по центру, учебные столы лицом к экрану, верстаки, смолы и покраска у окон с вытяжкой, катер на козлах, зона печати, хранение" loading="lazy" width="1536" height="1024"><figcaption>План мастерской · зоны А–Ж</figcaption></figure>
+      <div class="zones">
+        <div><b>Ж</b><span>Учебные столы: 6 столов на 2 ученика, ноутбуки, все смотрят на экран преподавателя</span></div>
+        <div><b>Г</b><span>Верстаки у глухой стены: сборка, разборка, слесарная работа</span></div>
+        <div><b>Д</b><span>Стенды: настоящий щиток и раковина для тренировки</span></div>
+        <div><b>В</b><span>Проект: катер на козлах, здесь группа собирает его весь год</span></div>
+        <div><b>А</b><span>Печать: 3D-принтер 800×800×1000 мм для корпуса катера</span></div>
+        <div><b>Б</b><span>Смолы и покраска у окон с вытяжкой, работает только взрослый</span></div>
+        <div><b>Е</b><span>Хранение: стеллажи, шкафы, отдельный ящик для аккумуляторов</span></div>
+        <div><b>⊕</b><span>Огнетушители и аптечка у входа и у зоны смол</span></div>
+      </div>
+      <ul class="safe">
+        <li><b>ток</b><span>Низкое напряжение на учебных стендах</span></li>
+        <li><b>допуск</b><span>К инструменту только после инструктажа и проверки</span></li>
+        <li><b>смолы</b><span>Смолы, шлифовка и покраска только у взрослого в средствах защиты</span></li>
+        <li><b>вода</b><span>Испытания катера в жилетах и шлемах, с лодкой сопровождения</span></li>
+      </ul>
     </div>
   </section>
 
   <section class="node">
     <div class="sym" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M22 2v7M22 35v7"/><circle cx="22" cy="22" r="13"/><path d="M16 27V17l6 7 6-7v10"/></svg></div>
     <div class="ref">M1 <i>· финальный проект</i></div>
-    <h2>В конце года цепь приводит в движение лодку 🌊</h2>
-    <p class="lead">Все навыки сходятся в общем проекте: группа вместе придумывает, собирает и выводит на воду свою электролодку. <strong>Какой она будет, решают сами ребята.</strong></p>
+    <h2>1 июня 2027 года катер выходит на воду 🌊</h2>
+    <p class="lead">Все навыки сходятся в одном проекте. Группа проектирует электрокатер в 3D, печатает корпус по частям на большом принтере, укрепляет стеклопластиком, монтирует электрику и сама выводит его на воду. <strong>Какой будет форма, решают ребята.</strong> Такой проект подросток с гордостью покажет в портфолио.</p>
     <div class="final">
-      <figure class="shot"><img src="img/v2_01_hero.jpg" alt="Подростки в кабинете труда собирают корпус лодки" loading="lazy" width="1672" height="941"><figcaption><small>сборка</small>Строим вместе</figcaption></figure>
-      <figure class="shot"><img src="img/v2_04_ispytaniya_B.jpg" alt="Подросток в шлеме и спасжилете на лодке, рядом лодка сопровождения" loading="lazy" width="1672" height="941"><figcaption><small>испытание</small>Первый выход</figcaption></figure>
+      <figure class="shot"><img src="img/v2_01_hero.jpg" alt="Подростки в мастерской собирают корпус катера" loading="lazy" width="1672" height="941"><figcaption><small>сборка</small>Строим вместе</figcaption></figure>
+      <figure class="shot"><img src="img/v2_04_ispytaniya_B.jpg" alt="Подросток в шлеме и спасжилете на катере, рядом лодка сопровождения" loading="lazy" width="1672" height="941"><figcaption><small>испытание</small>Первый выход</figcaption></figure>
     </div>
+  </section>
+
+  <section class="node">
+    <div class="sym" aria-hidden="true"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="16"/><path d="M22 12v10l7 5"/></svg></div>
+    <div class="ref">T1 <i>· формат и сроки</i></div>
+    <h2>Как устроен курс</h2>
+    <div class="fmt">
+      <div><b>5–11</b><span>классы</span></div>
+      <div><b>2 раза</b><span>в неделю по 2 часа</span></div>
+      <div><b>12 мест</b><span>в группе</span></div>
+      <div><b>дек → июнь</b><span>от розетки до катера</span></div>
+    </div>
+    <ol class="tl">
+      <li><b>Ноябрь 2026</b><span>открыт набор</span></li>
+      <li class="hot"><b>21–22 и 28–29 ноября</b><span>дни открытых дверей</span></li>
+      <li><b>1 декабря 2026</b><span>старт первой группы</span></li>
+      <li><b>1 июня 2027</b><span>катер группы на воде</span></li>
+    </ol>
   </section>
 
   <section class="node end" id="end">
@@ -348,24 +513,39 @@ footer{padding-block:var(--blk)}
     </svg>
     <h2 style="margin-top:18px">Ребёнок, который <span>понимает, как устроен мир</span></h2>
     <p class="lead">Это и есть результат курса. Не идеальный ремонт, а горящие глаза и уверенность «я разберусь».</p>
-    <div class="date"><b>Декабрь 2026</b><span>набор первой группы · Анталья</span></div>
+    <div class="date"><b>1 декабря 2026</b><span>старт первой группы · 12 мест · Анталья</span></div>
   </section>
 
   <section class="apply" id="apply">
-    <div class="ref">Запись на курс <i>· первая группа</i></div>
-    <h2 style="margin-top:14px">Оставьте заявку ⚡</h2>
-    <p class="lead">Расскажем о программе, расписании и стоимости.</p>
+    <div class="ref">Запись <i>· день открытых дверей и первая группа</i></div>
+    <h2 style="margin-top:14px">Запишитесь на день открытых дверей ⚡</h2>
+    <p class="lead">Выберите день, оставьте контакты, и мы пришлём в WhatsApp время и адрес. Если уже решили, отметьте «Сразу на курс»: забронируем место в первой группе.</p>
+    <div class="seats"><i></i>12 мест в первой группе · старт 1 декабря</div>
     <form class="form" id="lead" novalidate>
-      <label>Имя родителя<input id="f-parent" name="parent" autocomplete="name" required placeholder="Как к вам обращаться"></label>
-      <label>Телефон / WhatsApp<input id="f-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+90 …"></label>
-      <label>Имя ребёнка<input id="f-child" name="child" placeholder="Имя"></label>
+      <fieldset>
+        <legend>День открытых дверей *</legend>
+        <div class="chips">
+          <label><input type="radio" name="day" value="Сб, 21 ноября"><span>Сб, 21 ноября</span></label>
+          <label><input type="radio" name="day" value="Вс, 22 ноября"><span>Вс, 22 ноября</span></label>
+          <label><input type="radio" name="day" value="Сб, 28 ноября"><span>Сб, 28 ноября</span></label>
+          <label><input type="radio" name="day" value="Вс, 29 ноября"><span>Вс, 29 ноября</span></label>
+          <label><input type="radio" name="day" value="Сразу на курс"><span>Сразу на курс</span></label>
+        </div>
+      </fieldset>
+      <label>ФИО родителя *<input id="f-parent" name="parent" autocomplete="name" required maxlength="120" placeholder="Иванова Анна Сергеевна"></label>
+      <label>Телефон / WhatsApp *<input id="f-phone" name="phone" type="tel" autocomplete="tel" required maxlength="40" placeholder="+90 5__ ___ __ __"></label>
+      <label>ФИО ребёнка *<input id="f-child" name="child" required maxlength="120" placeholder="Иванов Пётр"></label>
       <label>Класс<select id="f-grade" name="grade"><option value="">Выберите</option><option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option></select></label>
-      <label class="full">Вопрос или комментарий<textarea id="f-note" name="note" placeholder="Что интересно ребёнку, удобное время для звонка"></textarea></label>
+      <label>Возраст<input id="f-age" name="age" type="number" inputmode="numeric" min="8" max="18" placeholder="лет"></label>
+      <label>Как вы о нас узнали?<select id="f-source" name="source"><option value="">Выберите</option><option>Instagram</option><option>От друзей</option><option>Telegram-канал</option><option>Увидели в школе</option><option>Другое</option></select></label>
+      <label class="full">Вопрос или комментарий<textarea id="f-note" name="note" maxlength="600" placeholder="Что интересно ребёнку, удобное время для звонка"></textarea></label>
+      <div class="hp" aria-hidden="true"><label>Сайт<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="agree"><input type="checkbox" id="f-agree" required><span>Согласен(на) на обработку персональных данных для связи по записи. Данные видит только школа и не передаются третьим лицам.</span></label>
       <div class="actions">
-        <button class="btn" type="submit" data-via="wa">Отправить заявку в WhatsApp</button>
+        <button class="btn" type="submit" id="f-send">Записаться</button>
       </div>
       <p class="msg" id="f-msg" role="status" aria-live="polite"></p>
-      <p class="note">Заявка откроется в WhatsApp уже заполненной, останется нажать «Отправить». Или напишите напрямую: <b>+90 535 676 49 27</b>.</p>
+      <p class="note">Удобнее написать? WhatsApp: <b>+90 535 676 49 27</b>.</p>
     </form>
   </section>
 </main>
@@ -382,7 +562,7 @@ footer{padding-block:var(--blk)}
   </div>
 </div></section>
 
-<footer><div class="wrap">Урок труда · практические навыки и инженерное мышление для подростков</div></footer>
+<footer><div class="wrap">Урок труда · практические навыки и инженерное мышление для подростков · Анталья</div></footer>
 
 <script>
 (function(){
@@ -403,19 +583,59 @@ footer{padding-block:var(--blk)}
   update();
 })();
 
+// Фото ↔ схема в модулях (наведение на компьютере, нажатие на телефоне)
+(function(){
+  document.querySelectorAll('.mod .ph').forEach(function(ph){
+    const card=ph.closest('.mod');
+    function toggle(){ const on=!card.classList.contains('on'); card.classList.toggle('on',on); ph.setAttribute('aria-pressed',on?'true':'false'); }
+    ph.addEventListener('click',toggle);
+    ph.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();} });
+  });
+})();
+
+// Карточки дней → выбор дня в форме
+(function(){
+  document.querySelectorAll('.day[data-day]').forEach(function(a){
+    a.addEventListener('click',function(){
+      const r=document.querySelector('input[name="day"][value="'+a.dataset.day+'"]'); if(r) r.checked=true;
+    });
+  });
+})();
+
+// Заявка: сохраняем в базу, затем предлагаем WhatsApp
 (function(){
   const f=document.getElementById('lead'); if(!f) return;
-  const WA='905356764927';
-  const v=id=>document.getElementById(id).value.trim();
-  f.addEventListener('submit',function(e){
+  const API='https://urok-truda-sovet.adamdubrovskii.workers.dev/lead', WA='905356764927';
+  const $=id=>document.getElementById(id), v=id=>$(id).value.trim();
+  const msg=$('f-msg'), btn=$('f-send');
+  function data(){
+    const d=f.querySelector('input[name="day"]:checked');
+    return {day:d?d.value:'', parent:v('f-parent'), phone:v('f-phone'), child:v('f-child'), grade:v('f-grade'), age:v('f-age'), source:v('f-source'), note:v('f-note'), website:f.website.value, consent:$('f-agree').checked, page:location.href};
+  }
+  function waText(x){
+    return ['Здравствуйте! Запись на «Урок труда».', x.day?'День: '+x.day:'', 'Родитель: '+x.parent, 'Телефон: '+x.phone, 'Ребёнок: '+x.child, x.grade?'Класс: '+x.grade:'', x.age?'Возраст: '+x.age:'', x.source?'Откуда узнали: '+x.source:'', x.note?'Комментарий: '+x.note:''].filter(Boolean).join('\n');
+  }
+  function bad(t,el){ msg.className='msg err'; msg.textContent=t; if(el) el.focus(); }
+  f.addEventListener('submit',async function(e){
     e.preventDefault();
-    const via=(e.submitter&&e.submitter.dataset.via)||'wa', msg=document.getElementById('f-msg');
-    if(!v('f-parent')||!v('f-phone')){msg.textContent='Укажите, пожалуйста, имя и телефон, чтобы школа могла с вами связаться.';(v('f-parent')?document.getElementById('f-phone'):document.getElementById('f-parent')).focus();return;}
-    const text=['Здравствуйте! Заявка на курс «Урок труда».','Родитель: '+v('f-parent'),'Телефон: '+v('f-phone'),v('f-child')?'Ребёнок: '+v('f-child'):'',v('f-grade')?'Класс: '+v('f-grade'):'',v('f-note')?'Комментарий: '+v('f-note'):''].filter(Boolean).join('\n');
-    const url='https://wa.me/'+WA+'?text='+encodeURIComponent(text);
-    const w=window.open(url,'_blank','noopener');
-    msg.textContent='Открываем WhatsApp с готовой заявкой. Нажмите «Отправить».';
-    if(!w) location.href=url;
+    const x=data();
+    if(!x.day) return bad('Выберите день открытых дверей или «Сразу на курс».', f.querySelector('input[name="day"]'));
+    if(x.parent.length<3) return bad('Укажите ФИО родителя.', $('f-parent'));
+    if(x.phone.replace(/\D/g,'').length<7) return bad('Укажите телефон, чтобы мы могли связаться.', $('f-phone'));
+    if(x.child.length<2) return bad('Укажите ФИО ребёнка.', $('f-child'));
+    if(!x.consent) return bad('Отметьте согласие на обработку данных.', $('f-agree'));
+    btn.disabled=true; msg.className='msg'; msg.textContent='Отправляем…';
+    const wa='https://wa.me/'+WA+'?text='+encodeURIComponent(waText(x));
+    try{
+      const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(x)});
+      const j=await r.json().catch(()=>({}));
+      if(!r.ok||!j.ok) throw new Error(j.error||'http');
+      f.innerHTML='<div class="done"><h3>Спасибо, вы записаны ✓</h3><p>'+(x.day==='Сразу на курс'?'Мы свяжемся с вами, чтобы забронировать место в первой группе.':'Ждём вас: '+x.day+'. Время и адрес пришлём в WhatsApp.')+'</p><p>Хотите ускорить? Отправьте заявку и в WhatsApp, ответим быстрее.</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="'+wa+'">Написать в WhatsApp</a></div></div>';
+    }catch(err){
+      btn.disabled=false;
+      msg.className='msg err';
+      msg.innerHTML='Не получилось отправить форму. Отправьте заявку в WhatsApp, она уже заполнена: <a class="btn" style="margin-top:8px" target="_blank" rel="noopener" href="'+wa+'">Открыть WhatsApp</a>';
+    }
   });
 })();
 </script>
