@@ -359,6 +359,19 @@ footer{padding-block:var(--blk)}
 
 .hero .ref{text-shadow:0 1px 10px rgba(0,0,0,.85)}
 
+/* телефон: модули листаются вбок, автопрокрутка */
+.mdots{display:none}
+@media (max-width:600px){
+  .mods{display:flex!important;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin-left:-20px!important;margin-right:-20px!important;padding:0 20px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  .mods::-webkit-scrollbar{display:none}
+  .mod{flex:0 0 86%;scroll-snap-align:center}
+  .mdots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+  .mdots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:var(--line);cursor:pointer;transition:width .25s,background .25s}
+  .mdots button.on{width:22px;border-radius:4px;background:var(--glow)}
+}
+
+.hint .mob{display:none}@media (max-width:600px){.hint .mob{display:inline}}
+
 </style>
 </head>
 <body>
@@ -435,7 +448,7 @@ footer{padding-block:var(--blk)}
     <div class="ref">X1–X6 <i>· шесть направлений</i></div>
     <h2>Всё, что дома ломается, станет понятным</h2>
     <p class="lead">Каждый модуль начинается со схемы. Сначала понять, потом собрать руками. Ток на стендах низкий, учимся без риска.</p>
-    <p class="hint">Наведите на фото или нажмите, чтобы увидеть схему модуля ↓</p>
+    <p class="hint">Наведите на фото или нажмите, чтобы увидеть схему модуля<span class="mob"> · листайте вбок →</span></p>
     <div class="mods">
       <article class="mod" style="--c:#ffb768"><div class="ph" tabindex="0" role="button" aria-pressed="false" aria-label="Электрика: показать схему"><img class="a" src="img/09_instrumenty.jpg" alt="Мультиметр, индикатор, тестер и фонарь на верстаке" loading="lazy" width="1448" height="1086"><img class="b" src="img/shema_elektrika.jpg" alt="Схема щитка: автомат, УЗО, розетка, выключатель и лампа" loading="lazy" width="1200" height="800"><span class="tag"><span class="t1">схема ⇄</span><span class="t2">фото ⇄</span></span></div><div class="in"><div class="top"><span>кабинет труда</span><b>U = I·R</b></div><h3>⚡ Электрика</h3><p>Лампа, выключатель, щиток и розетка. Мультиметр, пайка, схемы на стендах.</p></div></article>
       <article class="mod" style="--c:#73c6ff"><div class="ph" tabindex="0" role="button" aria-pressed="false" aria-label="Вода: показать схему"><img class="a" src="img/v2_06_modul_voda.jpg" alt="Подросток собирает сифон и подводку под раковиной" loading="lazy" width="1448" height="1086"><img class="b" src="img/shema_voda.jpg" alt="Схема подвода воды, раковины, сифона и канализации" loading="lazy" width="1200" height="800"><span class="tag"><span class="t1">схема ⇄</span><span class="t2">фото ⇄</span></span></div><div class="in"><div class="top"><span>кабинет труда</span><b>Q = v·S</b></div><h3>🚰 Вода</h3><p>Смеситель, сифон, протечки. Как вода приходит в дом и уходит из него.</p></div></article>
@@ -444,6 +457,7 @@ footer{padding-block:var(--blk)}
       <article class="mod" style="--c:#ff8a73"><div class="ph" tabindex="0" role="button" aria-pressed="false" aria-label="Автомобиль: показать схему"><img class="a" src="img/08_modul_avto.jpg" alt="Проверка уровня масла щупом под капотом автомобиля" loading="lazy" width="1448" height="1086"><img class="b" src="img/shema_dvigatel.jpg" alt="Четыре такта двигателя: впуск, сжатие, рабочий ход, выпуск" loading="lazy" width="1200" height="800"><span class="tag"><span class="t1">схема ⇄</span><span class="t2">фото ⇄</span></span></div><div class="in"><div class="top"><span>мотор и автосервис</span><b>p = F/S</b></div><h3>🚗 Мотор и автомобиль</h3><p>Как мотор «дышит» и почему глохнет. Масло, жидкости, давление в шинах.</p></div></article>
       <article class="mod" style="--c:#ffd36b"><div class="ph" tabindex="0" role="button" aria-pressed="false" aria-label="Черчение и 3D: показать схему"><img class="a" src="img/v2_12_modul_3d.jpg" alt="Подростки у монитора с 3D-моделью, рядом 3D-принтер печатает деталь" loading="lazy" width="1672" height="941"><img class="b" src="img/shema_3d.jpg" alt="Стол 3D-принтера 800 на 800 мм и шесть секций корпуса катера, по одной печати на секцию" loading="lazy" width="1200" height="800"><span class="tag"><span class="t1">схема ⇄</span><span class="t2">фото ⇄</span></span></div><div class="in"><div class="top"><span>кабинет труда</span><b>M 1:10</b></div><h3>🖨 Черчение, 3D и ИИ</h3><p>От эскиза к 3D-модели и детали, напечатанной своими руками. Нейросеть подсказывает, ученик проверяет.</p></div></article>
     </div>
+    <div class="mdots" aria-label="Направления"></div>
   </section>
 
   <section class="node" id="workshop">
@@ -591,6 +605,29 @@ footer{padding-block:var(--blk)}
     ph.addEventListener('click',toggle);
     ph.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();} });
   });
+})();
+
+// Телефон: карусель направлений, автопрокрутка с показом схемы
+(function(){
+  const box=document.querySelector('.mods'), dots=document.querySelector('.mdots'); if(!box||!dots) return;
+  const mq=matchMedia('(max-width:600px)'), still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const cards=[...box.querySelectorAll('.mod')];
+  cards.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',c.querySelector('h3').textContent.trim());b.onclick=()=>{pause();go(i)};dots.appendChild(b)});
+  const btns=[...dots.children]; let cur=0, timer=null, visible=false, holdUntil=0;
+  function go(i){cur=(i+cards.length)%cards.length;box.scrollTo({left:cards[cur].offsetLeft-box.offsetLeft-(box.clientWidth-cards[cur].offsetWidth)/2,behavior:'smooth'});}
+  function mark(){const mid=box.scrollLeft+box.clientWidth/2;let best=0,d=1e9;cards.forEach((c,i)=>{const x=c.offsetLeft-box.offsetLeft+c.offsetWidth/2;if(Math.abs(x-mid)<d){d=Math.abs(x-mid);best=i}});cur=best;btns.forEach((b,i)=>b.classList.toggle('on',i===best));}
+  box.addEventListener('scroll',()=>requestAnimationFrame(mark),{passive:true});
+  function pause(){holdUntil=Date.now()+6000;cards.forEach(c=>c.classList.remove('auto'));}
+  ['touchstart','pointerdown','wheel'].forEach(ev=>box.addEventListener(ev,pause,{passive:true}));
+  function tick(){
+    if(!mq.matches||!visible||still||Date.now()<holdUntil||document.hidden) return;
+    const c=cards[cur];
+    if(!c.classList.contains('auto')){ c.classList.add('auto','on'); }
+    else { c.classList.remove('auto','on'); go(cur+1); }
+  }
+  new IntersectionObserver(es=>{visible=es[0].isIntersecting},{threshold:.5}).observe(box);
+  timer=setInterval(tick,1300);
+  mark();
 })();
 
 // Карточки дней → выбор дня в форме
