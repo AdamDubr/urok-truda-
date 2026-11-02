@@ -372,6 +372,16 @@ footer{padding-block:var(--blk)}
 
 .hint .mob{display:none}@media (max-width:600px){.hint .mob{display:inline}}
 
+.tools-h{margin-top:var(--blk);font-size:clamp(1.25rem,3vw,1.7rem)}
+.tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;background:var(--line);border:1px solid var(--line)}
+.tools div{background:var(--panel);padding:18px 16px;display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:12px;row-gap:2px;align-items:start;align-content:start;min-width:0}
+.tools svg{grid-row:span 2;width:44px;height:44px;fill:none;stroke:var(--glow);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tools b{font:700 1rem/1.2 var(--f-body);color:var(--ink)}
+.tools span{color:var(--ink-soft);font-size:.9rem;line-height:1.4}
+.tools div:hover svg{stroke:var(--volt)}
+@media (max-width:960px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.tools div{grid-template-columns:minmax(0,1fr);row-gap:6px;padding:14px 12px}.tools svg{grid-row:auto;width:34px;height:34px}.tools b{font-size:.95rem;overflow-wrap:anywhere}.tools span{font-size:.86rem}}
+
 </style>
 </head>
 <body>
@@ -468,16 +478,8 @@ footer{padding-block:var(--blk)}
     <div class="ws">
       <figure class="shot"><img src="img/v3_masterskaya.jpg" alt="Подростки работают в мастерской: велосипед на стойке, двигатель на верстаке, 3D-модель катера на мониторе, 3D-принтер печатает корпус" loading="lazy" width="1672" height="941"><figcaption><small>так будет выглядеть занятие</small>Каждый занят своим делом</figcaption></figure>
       <figure class="plan"><img src="img/plan_masterskoy.jpg" alt="План мастерской: вход по центру, учебные столы лицом к экрану, верстаки, смолы и покраска у окон с вытяжкой, катер на козлах, зона печати, хранение" loading="lazy" width="1536" height="1024"><figcaption>План мастерской · зоны А–Ж</figcaption></figure>
-      <div class="zones">
-        <div><b>Ж</b><span>Учебные столы: 6 столов на 2 ученика, ноутбуки, все смотрят на экран преподавателя</span></div>
-        <div><b>Г</b><span>Верстаки у глухой стены: сборка, разборка, слесарная работа</span></div>
-        <div><b>Д</b><span>Стенды: настоящий щиток и раковина для тренировки</span></div>
-        <div><b>В</b><span>Проект: катер на козлах, здесь группа собирает его весь год</span></div>
-        <div><b>А</b><span>Печать: 3D-принтер 800×800×1000 мм для корпуса катера</span></div>
-        <div><b>Б</b><span>Смолы и покраска у окон с вытяжкой, работает только взрослый</span></div>
-        <div><b>Е</b><span>Хранение: стеллажи, шкафы, отдельный ящик для аккумуляторов</span></div>
-        <div><b>⊕</b><span>Огнетушители и аптечка у входа и у зоны смол</span></div>
-      </div>
+      <h3 class="tools-h">Инструмент, которым ребёнок научится работать</h3>
+      <div class="tools"><div><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="9" y="4" width="22" height="32" rx="3"/><rect x="13" y="8" width="14" height="7"/><circle cx="20" cy="24" r="5"/><path d="M20 24l3-3M14 36v4M26 36v4"/></svg><b>Мультиметр</b><span>найти обрыв, измерить напряжение и ток</span></div><div><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 34l12-12M18 22l6-6 4 4-6 6zM28 20l6-6"/><path d="M31 8c-2 2 2 3 0 5M35 6c-2 2 2 3 0 5"/></svg><b>Паяльник</b><span>спаять провод, разъём и плату</span></div><div><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="10" width="30" height="22" rx="2"/><rect x="9" y="14" width="12" height="6"/><circle cx="12" cy="26" r="2.5"/><circle cx="28" cy="26" r="2.5"/><path d="M28 14v6M25 17h6"/></svg><b>Блок питания</b><span>собрать схему на безопасном токе</span></div><div><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 12h20l4 4h4v4h-4l-4 4H18"/><path d="M18 24l-2 12h-6l2-12M26 12v12"/><path d="M34 18h4"/></svg><b>Шуруповёрт</b><span>сверлить и закручивать без сколов</span></div><div><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M7 18c0-5 4-8 9-8h14l3 6-4 6H12"/><path d="M18 22v14M15 36h6M26 10V6"/></svg><b>Электролобзик</b><span>пилить фанеру точно по разметке</span></div><div><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 10h32v6H4zM8 16v18l4-4V16M20 16v14l4-4V16"/><path d="M14 10v6M18 10v6M22 10v6"/></svg><b>Штангенциркуль</b><span>мерить деталь до сотых долей мм</span></div><div><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M27 5a7 7 0 0 0-6.5 9.5L7 28a3 3 0 0 0 4.2 4.2L24.7 18.7A7 7 0 0 0 34 12l-4.5 4.5-4.6-1.4-1.4-4.6z"/></svg><b>Ключи и отвёртки</b><span>разобрать и собрать велосипед и мотор</span></div><div><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 34h28M10 34v-8h20v8M12 26v-10h6v10M22 26v-10h6v10M18 18h4M34 12l-8 8"/></svg><b>Тиски и напильники</b><span>слесарная работа по металлу</span></div><div><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="14" y="16" width="12" height="12" rx="2"/><circle cx="20" cy="22" r="2"/><path d="M4 22h8M28 22h8M20 4v10M20 30v6"/></svg><b>Лазерный уровень</b><span>разметить ровно стену и корпус</span></div><div><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 6h28v30H6zM6 14h28"/><path d="M18 14v6l2 3 2-3v-6"/><path d="M12 36v-6h16v6"/></svg><b>3D-принтер</b><span>печать корпуса катера 800×800×1000 мм</span></div><div><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="7" y="8" width="26" height="18" rx="2"/><path d="M3 32h34l-3-6H6z"/><path d="M15 20l5-3 5 3v-6l-5-3-5 3zM20 17v6"/></svg><b>CAD на ноутбуке</b><span>3D-модель катера по своему эскизу</span></div><div><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="11" y="11" width="18" height="18" rx="3"/><path d="M15 4v7M20 4v7M25 4v7M15 29v7M20 29v7M25 29v7M4 15h7M4 20h7M4 25h7M29 15h7M29 20h7M29 25h7"/><path d="M15 24l2.5-8 2.5 8M16 21.5h3M24 16v8"/></svg><b>Нейросеть</b><span>поставить задачу и проверить ответ</span></div></div>
       <ul class="safe">
         <li><b>ток</b><span>Низкое напряжение на учебных стендах</span></li>
         <li><b>допуск</b><span>К инструменту только после инструктажа и проверки</span></li>
