@@ -5,7 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Урок труда — практический курс для подростков 5–11 классов в Частной Московской Международной школе, Анталья. Дни открытых дверей 21–22 и 28–29 ноября, старт 1 декабря 2026.">
 <style>body{margin:0}[hidden]{display:none!important}</style>
-<title>Урок труда</title>
+<title>Урок труда — инженерный курс для подростков в Анталье</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Урок труда — инженерный курс для подростков">
+<meta property="og:description" content="5–11 классы, Анталья. Электрика, вода, мотор, 3D-печать и свой катер на воде. Летом — технолагерь и события на воде. Старт 1 декабря 2026.">
+<meta property="og:image" content="https://uroktruda.adamhikman.com/img/og.jpg">
+<meta property="og:url" content="https://uroktruda.adamhikman.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
@@ -397,6 +404,35 @@ footer{padding-block:var(--blk)}
 .hook-txt .qs{margin-top:6px!important}
 @media (max-width:760px){.hook{grid-template-columns:minmax(0,1fr)}.hook-img{max-width:340px;margin:0 auto;transform:none}}
 
+
+/* v4: год, лето, события, TEKNOFEST */
+.grow.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:560px){.grow.g2{grid-template-columns:minmax(0,1fr)}}
+.pair.posters .shot img{aspect-ratio:16/9}
+.pair.posters .shot figcaption{position:static;background:var(--panel);padding:12px 14px}
+.callout{margin-top:var(--blk);padding:clamp(18px,3vw,26px);background:linear-gradient(120deg,rgba(255,183,104,.14),rgba(217,129,58,.05));border:1px solid rgba(255,183,104,.45);display:grid;gap:10px}
+.callout b{font:700 clamp(1.1rem,2.4vw,1.4rem)/1.25 var(--f-display);color:var(--glow)}
+.callout p{color:var(--ink);max-width:66ch;margin:0}
+.tf{margin-top:var(--blk);border:1px solid rgba(115,198,255,.5);background:linear-gradient(180deg,rgba(115,198,255,.10),rgba(15,17,20,.2))}
+.tf img{display:block;width:100%;aspect-ratio:1400/595;object-fit:cover;border-bottom:1px solid rgba(115,198,255,.35)}
+.tf .in{padding:clamp(18px,3vw,28px);display:grid;gap:10px}
+.tf .k{font:500 .72rem/1.3 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--volt)}
+.tf h3{font:700 clamp(1.2rem,2.6vw,1.6rem)/1.2 var(--f-display);margin:0}
+.tf h3 em{font-style:normal;color:var(--volt)}
+.tf p{color:var(--ink-soft);max-width:66ch;margin:0}
+.tl.t6{grid-template-columns:repeat(6,minmax(0,1fr))}
+@media (max-width:900px){.tl.t6{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:22px}}
+@media (max-width:700px){.tl.t6{grid-template-columns:minmax(0,1fr)}}
+/* крупнее зоны нажатия на телефоне */
+@media (max-width:600px){
+  .mdots{gap:2px}
+  .mdots button{width:32px;height:32px;background:transparent;position:relative}
+  .mdots button::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--line);transition:width .25s,background .25s,margin .25s}
+  .mdots button.on{width:38px;background:transparent}
+  .mdots button.on::after{width:22px;margin-left:-11px;border-radius:4px;background:var(--glow)}
+  .form .agree input{width:24px;height:24px}
+  .form .note b, .school a{display:inline-block;padding:6px 0}
+}
 </style>
 </head>
 <body>
@@ -411,7 +447,7 @@ footer{padding-block:var(--blk)}
   <div class="wrap">
     <div class="ref">Новый курс «Урок труда» <i>· 5–11 классы · Анталья</i></div>
     <h1 style="margin-top:16px">Разобраться.<br>Придумать.<br><em>Сделать.</em></h1>
-    <p class="lead">Подросток разберётся, как устроены розетка, кран, велосипед и мотор, и к лету выведет на воду катер, который группа построит своими руками.</p>
+    <p class="lead">Подросток разберётся, как устроены розетка, кран, велосипед и мотор, и к лету выведет на воду катер, который группа построит своими руками. Летом — технолагерь, испытания катера и события на воде.</p>
     <div class="dod"><b>Дни открытых дверей: 21–22 и 28–29 ноября</b><span>вход по записи</span></div>
     <div class="cta"><a class="btn" href="#apply">Записаться на день открытых дверей</a><a class="btn ghost" href="#program">Смотреть программу</a></div>
   </div>
@@ -521,6 +557,47 @@ footer{padding-block:var(--blk)}
     </div>
   </section>
 
+  <section class="node" id="year">
+    <div class="sym" aria-hidden="true"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="15"/><path d="M22 12v10l7 5"/><path d="M4 22h3M37 22h3"/></svg></div>
+    <div class="ref">Y1 <i>· круглый год</i></div>
+    <h2>Курс не заканчивается в июне</h2>
+    <p class="lead">Пилотный курс идёт с 1 декабря по 1 июня. Летом занятия продолжаются в другом формате: технический лагерь, испытания катера и события на воде. С сентября курс переходит на <strong>годовой цикл</strong>: в учебный год ребята учатся и создают свои проекты, летом испытывают их, участвуют в лагере и профориентационных мероприятиях.</p>
+    <div class="grow g2">
+      <div><span class="e">🛠</span><h3>Декабрь – май: учимся и строим</h3><p>Электрика, вода, мотор, 3D-печать и ИИ. Группа проектирует и собирает свой катер.</p></div>
+      <div><span class="e">🌊</span><h3>1 июня: катер на воде</h3><p>Первый выход катера, который ребята построили сами. Родители на берегу.</p></div>
+      <div><span class="e">☀️</span><h3>Июнь – август: технолагерь</h3><p>Испытания и доработка катера, смены по две недели, свои проекты для новичков.</p></div>
+      <div><span class="e">🎓</span><h3>С сентября: новый учебный год</h3><p>Новые группы и новые проекты. Опытные ученики становятся наставниками.</p></div>
+    </div>
+  </section>
+
+  <section class="node" id="summer">
+    <div class="sym" aria-hidden="true"><svg viewBox="0 0 44 44"><circle cx="22" cy="18" r="7"/><path d="M22 4v4M22 28v4M8 18h4M32 18h4M6 36q4-4 8 0t8 0 8 0 8 0"/></svg></div>
+    <div class="ref">S1 <i>· лето на воде</i></div>
+    <h2>Лето: технолагерь и события на воде</h2>
+    <p class="lead">Весь учебный год ребёнок строит. Летом он видит, ради чего: катер выходит на воду, а ребята выезжают на настоящие морские события, видят технику вживую и знакомятся с инженерами, пилотами и механиками.</p>
+    <div class="grow">
+      <div><span class="e">🔧</span><h3>Июнь: испытания</h3><p>Ходовые испытания катера, замеры, доработка корпуса, водомёта и электрики.</p></div>
+      <div><span class="e">⛺</span><h3>Июль: лагерь</h3><p>Смены по две недели. Старшие ребята — наставники, новички делают свои проекты.</p></div>
+      <div><span class="e">🏁</span><h3>Август: регата</h3><p>Своя регата «Урок труда»: заезды катеров, родители и друзья на берегу.</p></div>
+    </div>
+    <div class="pair posters">
+      <figure class="shot"><img src="img/afisha_kabotaj.jpg" alt="Афиша праздника Denizcilik ve Kabotaj Bayramı, 1 июля: гидроцикл, флайборд, парасейлинг" loading="lazy" width="596" height="335"><figcaption><small>1 июля · праздник на воде</small>День моряков и каботажа</figcaption></figure>
+      <figure class="shot"><img src="img/afisha_motosurf.jpg" alt="Афиша этапа чемпионата мира MotoSurf в Чешме" loading="lazy" width="1200" height="675"><figcaption><small>июнь · Чешме, Измир</small>Чемпионат мира MotoSurf</figcaption></figure>
+    </div>
+    <div class="callout">
+      <b>Катер, который построил ваш ребёнок, — в морском кортеже</b>
+      <p>1 июля, в День моряков и каботажа, катер учеников может пройти в морском кортеже вместе с городом и портом Антальи. Это не просто красивый выход на воду, а наглядное доказательство того, чему дети научились и чего добились своими руками. В августе — своя регата «Урок труда», куда мы приглашаем семьи и друзей.</p>
+    </div>
+    <div class="tf">
+      <img src="img/teknofest.jpg" alt="Фестиваль технологий TEKNOFEST" loading="lazy" width="1400" height="595">
+      <div class="in">
+        <span class="k">цель для самых увлечённых</span>
+        <h3>Выйти на большую технологическую сцену: <em>TEKNOFEST</em></h3>
+        <p>Самые увлечённые ребята смогут представить свой проект на TEKNOFEST — крупнейшем технологическом фестивале Турции: показать его инженерам, увидеть технику будущего и побороться за призы. Возможно, именно этот опыт станет первым шагом в инженерную профессию.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="node">
     <div class="sym" aria-hidden="true"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="16"/><path d="M22 12v10l7 5"/></svg></div>
     <div class="ref">T1 <i>· формат и сроки</i></div>
@@ -529,13 +606,15 @@ footer{padding-block:var(--blk)}
       <div><b>5–11</b><span>классы</span></div>
       <div><b>2 раза</b><span>в неделю по 2 часа</span></div>
       <div><b>12 мест</b><span>в группе</span></div>
-      <div><b>дек → июнь</b><span>от розетки до катера</span></div>
+      <div><b>круглый год</b><span>учёба, а летом лагерь</span></div>
     </div>
-    <ol class="tl">
+    <ol class="tl t6">
       <li><b>Ноябрь 2026</b><span>открыт набор</span></li>
       <li class="hot"><b>21–22 и 28–29 ноября</b><span>дни открытых дверей</span></li>
       <li><b>1 декабря 2026</b><span>старт первой группы</span></li>
       <li><b>1 июня 2027</b><span>катер группы на воде</span></li>
+      <li><b>Июнь – август</b><span>технолагерь, 1 июля — морской кортеж, регата</span></li>
+      <li><b>Сентябрь 2027</b><span>новый учебный год</span></li>
     </ol>
   </section>
 
@@ -556,7 +635,7 @@ footer{padding-block:var(--blk)}
   <section class="apply" id="apply">
     <div class="ref">Запись <i>· день открытых дверей и первая группа</i></div>
     <h2 style="margin-top:14px">Запишитесь на день открытых дверей ⚡</h2>
-    <p class="lead">Выберите день, оставьте контакты, и мы пришлём в WhatsApp время и адрес. Если уже решили, отметьте «Сразу на курс»: забронируем место в первой группе.</p>
+    <p class="lead">Выберите день, оставьте контакты, и мы пришлём в WhatsApp время и адрес. Если уже решили, отметьте «Сразу на курс»: забронируем место в первой группе. Интересует лето — отметьте «Летний технолагерь».</p>
     <div class="seats"><i></i>12 мест в первой группе · старт 1 декабря</div>
     <form class="form" id="lead" novalidate>
       <fieldset>
@@ -567,6 +646,7 @@ footer{padding-block:var(--blk)}
           <label><input type="radio" name="day" value="Сб, 28 ноября"><span>Сб, 28 ноября</span></label>
           <label><input type="radio" name="day" value="Вс, 29 ноября"><span>Вс, 29 ноября</span></label>
           <label><input type="radio" name="day" value="Сразу на курс"><span>Сразу на курс</span></label>
+          <label><input type="radio" name="day" value="Летний технолагерь"><span>Летний технолагерь</span></label>
         </div>
       </fieldset>
       <label>ФИО родителя *<input id="f-parent" name="parent" autocomplete="name" required maxlength="120" placeholder="Иванова Анна Сергеевна"></label>
@@ -577,7 +657,7 @@ footer{padding-block:var(--blk)}
       <label>Как вы о нас узнали?<select id="f-source" name="source"><option value="">Выберите</option><option>Instagram</option><option>От друзей</option><option>Telegram-канал</option><option>Увидели в школе</option><option>Другое</option></select></label>
       <label class="full">Вопрос или комментарий<textarea id="f-note" name="note" maxlength="600" placeholder="Что интересно ребёнку, удобное время для звонка"></textarea></label>
       <div class="hp" aria-hidden="true"><label>Сайт<input name="website" tabindex="-1" autocomplete="off"></label></div>
-      <label class="agree"><input type="checkbox" id="f-agree" required><span>Согласен(на) на обработку персональных данных для связи по записи. Данные видит только школа и не передаются третьим лицам.</span></label>
+      <label class="agree"><input type="checkbox" id="f-agree" required><span>Согласен(на) на обработку персональных данных для связи по записи. Данные используются только для связи по записи, хранятся на защищённых серверах (Cloudflare) и в почте школы, не продаются и не передаются для рекламы.</span></label>
       <div class="actions">
         <button class="btn" type="submit" id="f-send">Записаться</button>
       </div>
@@ -679,7 +759,7 @@ footer{padding-block:var(--blk)}
   f.addEventListener('submit',async function(e){
     e.preventDefault();
     const x=data();
-    if(!x.day) return bad('Выберите день открытых дверей или «Сразу на курс».', f.querySelector('input[name="day"]'));
+    if(!x.day) return bad('Выберите день открытых дверей, «Сразу на курс» или «Летний технолагерь».', f.querySelector('input[name="day"]'));
     if(x.parent.length<3) return bad('Укажите ФИО родителя.', $('f-parent'));
     if(x.phone.replace(/\D/g,'').length<7) return bad('Укажите телефон, чтобы мы могли связаться.', $('f-phone'));
     if(x.child.length<2) return bad('Укажите ФИО ребёнка.', $('f-child'));
@@ -690,7 +770,7 @@ footer{padding-block:var(--blk)}
       const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(x)});
       const j=await r.json().catch(()=>({}));
       if(!r.ok||!j.ok) throw new Error(j.error||'http');
-      f.innerHTML='<div class="done"><h3>Спасибо, вы записаны ✓</h3><p>'+(x.day==='Сразу на курс'?'Мы свяжемся с вами, чтобы забронировать место в первой группе.':'Ждём вас: '+x.day+'. Время и адрес пришлём в WhatsApp.')+'</p><p>Хотите ускорить? Отправьте заявку и в WhatsApp, ответим быстрее.</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="'+wa+'">Написать в WhatsApp</a></div></div>';
+      f.innerHTML='<div class="done"><h3>Спасибо, вы записаны ✓</h3><p>'+(x.day==='Сразу на курс'?'Мы свяжемся с вами, чтобы забронировать место в первой группе.':x.day==='Летний технолагерь'?'Мы свяжемся с вами, когда откроем запись на летние смены.':'Ждём вас: '+x.day+'. Время и адрес пришлём в WhatsApp.')+'</p><p>Хотите ускорить? Отправьте заявку и в WhatsApp, ответим быстрее.</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="'+wa+'">Написать в WhatsApp</a></div></div>';
     }catch(err){
       btn.disabled=false;
       msg.className='msg err';
